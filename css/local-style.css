@@ -1,0 +1,33 @@
+body, html {
+	font-family: Verdana, sans-serif;
+	height: 100%;
+  }
+  
+.parallax {
+	/* The image used */
+	background-image: url("../brain.jpg");
+
+	/* Full height */
+	height: 100%; 
+
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.blueBlock {
+	height: 100px;
+	background-color: cadetblue;
+}
+
+.goldBlock {
+	height: 100px;
+	background-color: goldenrod;
+}
+
+.grayBlock {
+	height: 1000px;
+	background-color: lightslategray;
+}
