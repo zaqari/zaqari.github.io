@@ -97,11 +97,13 @@ h3 {
 
 .header a:hover {
   background-color: #ddd;
+  z-index: 102;
   color: black;
 }
 
 .header a.active {
   background-color: dodgerblue;
+  z-index: 101;
   color: white;
 }
 
@@ -124,11 +126,11 @@ h3 {
 }
 
 /* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
+/* @media only screen and (max-device-width: 1024px) {
   .bgimg-1, .bgimg-2, .bgimg-3 {
     background-attachment: scroll;
   }
-}
+} */
 </style>
 </head>
 <body>
