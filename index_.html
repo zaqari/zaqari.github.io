@@ -85,13 +85,38 @@ h3 {
   color: #111;
 }
 
+.header {
+  overflow: hidden;
+  padding: 10px 16px;
+  background: #022f5c;
+  color: #f1f1f1;
+  z-index: 100;
+  text-align: center;
+  font: 16px "Lato", sans-serif
+}
+
+.header a:hover {
+  background-color: #ddd;
+  z-index: 102;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  z-index: 101;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
 .content {
-  padding: 0px;
+  padding: 16px;
 }
 
 .sticky {
   position: fixed;
-  overflow: visible;
   top: 0;
   width: 100%;
 }
@@ -107,83 +132,74 @@ h3 {
   }
 }
 
-/* Navbar container */
-.navbar {
-    /* overflow: hidden; */
-  padding: 10px 16px;
-  background: #022f5c;
-  color: #f1f1f1;
-  z-index: 100;
-  text-align: right;
-  font: 16px "Lato", sans-serif;
+/* .dropdown {
+  display: inline-block;
+  position: relative;
 }
 
-/* Links inside the navbar */
-.navbar a {
-  float: left;
-  font-size: 16px;
+.dropdown-options {
+  display: none;
+}
+
+.dropdown:hover .dropdown-options {
+  display: block;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 103;
+} */
+
+.dropbtn {
+  background-color: #022f5c;
   color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* The dropdown container */
-.dropdown {
-  float: left;
-  overflow: hidden;
-  z-index: 300;
-}
-
-/* Dropdown button */
-.dropdown .dropbtn {
+  padding: 2px;
   font-size: 16px;
   border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
 }
 
-/* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: rgb(79, 78, 78);
-  z-index: 103;
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-/* Dropdown content (hidden by default) */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #f1f1f1;
   min-width: 160px;
+  min-height: 32px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 110;
+  z-index: 1;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
-  float: none;
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  text-align: left;
-  z-index: 111;
+  z-index: 110;
 }
 
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-  z-index: 111;
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #f1f1f1;}
+
+.showLinks{
+  position: relative;
+  display: inline-block;
 }
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
+.shownLinks {
+  display: none;
+}
+
+.showLinks:hover .shownLinks{
   display: block;
-  z-index: 111;
+  background-color: #f1f1f1;
+  color: #022f5c;
 }
 
 </style>
@@ -197,20 +213,22 @@ h3 {
   </div>
 </div>
 
-<div class="navbar" id="myHeader" style="min-height: 4%;">
-  <a href="./intiatives.html">Current Initiatives</a> 
-    <a href="./services.html">Services Offered</a>
-    <div class="dropdown">
-        <button class="dropbtn">
-            Vitae 
-        </button>
-        <div class="dropdown-content">
-          <a href="https://drive.google.com/file/d/10rjossEwHgzbZuX0xHZ-FDY5tlU3obdE/view?usp=sharing" target="_blank" style="color: #022f5c;">Curriculum Vitae</a>
-          <a href="https://drive.google.com/file/d/1Q6Nsf7dF0Mz7MCKA1ueDRxT_KuioCz4J/view?usp=sharing" target="_blank" style="color: #022f5c;">Resume</a>
+<div class="header" id="myHeader">
+  <div class="header-right"> 
+    <a href="./intiatives.html">Current Initiatives</a>  |  
+    <a href="./services.html">Services Offered</a>  |  
+    <!-- <a href="./CV.html">Curriculum Vitae</a> -->
+    <div class="showLinks">
+        <button class="dropbtn">Vitae</button>
+        <!-- <div class="dropdown-options"> -->
+        <div class="shownLinks">
+          <a href="https://cogitmethis.files.wordpress.com/2023/06/zacharyrosen-cv-2023.pdf" target="_blank" style="color: #022f5c;">Curriculum Vitae | </a>
+          <a href="https://cogitmethis.files.wordpress.com/2023/07/zacharyrosen-resume-2023.pdf" target="_blank" style="color: #022f5c;">Resume</a>
         </div>
-    </div>
-    <a href="https://cogitmethis.wordpress.com/" target="_blank">Blog</a> 
+    </div> | 
+    <a href="https://cogitmethis.wordpress.com/" target="_blank">Blog</a>  |  
     <a href="https://github.com/zaqari" target="_blank">Code/Portfolio</a>
+  </div>
   
 </div>
 
@@ -220,9 +238,13 @@ h3 {
   <p>My name is Zachary Rosen. I'm a Data Scientist and computational linguist with expertise in Language Modeling (from LLMs to earlier word vector models), NLU methods for group/consumer insights, and user behavior modeling. I tend to rely on a gammut of tools--no problem requires quite the same modeling approach--but what thematically ties my work together is my emphasis on making sense of human behavior using big data.</p>
   <p>If you're looking to learn a bit more about me, feel free to keep scrolling on this page, or check out my Curriculum Vitae in the link in the banner. You can get a quick summary of some of my more recent research initiatives via the "Current Initiatives" page (link in the banner). And if you want to read about some nerdy, pop-sci data science experiments, head on over to my blog.</p>
   <p>Let me know if you have any questions or want to collaborate on a particular project or idea. You can reach me by email at zrosen[at]uci.edu.</p>
+  <!-- <p>My name is Zachary Rosen. I'm a Data Scientist and human behavior/modeling specialist. While I invite you to take a look at my CV for more information about the roles I've taken on over the years, the thread that I think ties my prior work together is fairly simple: I'm interested in understanding human behavior first and foremost. I think from there, everything else--including building out machine learning algorithms or deploying solutions from companies like openAI--naturally falls into place.</p>
+  <p>Start by understanding people, and you'll accomplish your goals!</p>
+  <p>My main area of interest is in leveraging Large Language Models (LLMs) and LLM generated Embeddings to understand social networks and consumer behavior. In addition to that, my NLU work tends to rely on a mixture of neural network methods, Bayesian Statistics, and Monte Carlo methods.</p>
+  <p>As a data scientist and computational linguist I'm interested in quite a lot of things. But chief among those is that humans are weird, we do bizarre things with language, and those bizarre things are both really beautiful to document and extremely valuable for generating business insights.</p> -->
 </div>
 
-<!-- <div class="bgimg-3">
+<div class="bgimg-3">
   <div class="caption">
   <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;"></span>
   </div>
@@ -258,7 +280,7 @@ h3 {
         </tr>
       </table>
     </div>
-  </div> -->
+  </div>
 
 <div class="bgimg-2">
   <div class="caption">
@@ -269,7 +291,7 @@ h3 {
 <div style="position:relative;">
   <div style="color:white;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
     <h3 style="text-align:center;color:lightslategrey;">RECENT PUBLICATIONS</h3>
-    <p>Rosen, Z. and Dale, R. (2023). <a target="_blank" href="">BERTs of a Feather: Studying Inter- and Intra-group Communication Using Information Theory and Artificially Intelligent Language Models.</a> <i>Behavior Research Methods</i></p>
+    <p>Rosen, Z. and Dale, R. (<i>in revision</i>). <a target="_blank" href="">BERTs of a Feather: Studying Inter- and Intra-group Communication Using Information Theory and Artificially Intelligent Language Models.</a> <i>Behavior Research Methods</i></p>
     <p>&nbsp;</p>
     <p>Rosen, Z. (2022). <a target="_blank" href="https://journals.sagepub.com/doi/abs/10.1177/0261927X221095865">A BERT's Eye View: A Big Data Framework for Assessing Language Convergence and Accommodation.</a> <i>Journal of Language and Social Psychology (42,1)</i></p>
     <p>&nbsp;</p>
@@ -289,11 +311,30 @@ h3 {
 
 <div class="bgimg-4"></div>
 
+<!-- <div style="position:relative;">
+  <div style="color:white;background-color:#022f5c;text-align:center;padding:50px 80px;text-align: justify;">
+    <h3 style="text-align:center;color:lightslategrey;">CURRICULUM VITAE</h3>
+    <table stye="align:center;" rules="rows">
+      <tr><td style="width:30%;font-size: 16px; text-align: left;"><a href="./teaching.html">Teaching Vitae</a></td></tr>
+      <tr><td style="width:30%px;font-size: 16px;text-align: left;"><a href="./consulting.html">Consulting Vitae</a></td></tr>
+      <tr><td style="width:30%;font-size: 16px;text-align: left;"><a href="./programming.html">Programming Vitae</a></td></tr>
+      <tr><td style="width:30%;font-size: 16px;text-align: left;"><a href="./talks.html">Presentations/Guest Lectures Vitae</a></td></tr>
+    </table>
+  </div>
+</div> -->
+
+<!-- <div class="bgimg-2"></div> -->
+
 <div style="position:relative;">
   <div style="color:white;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
     <h3 style="text-align:center;color:lightslategrey;">EDUCATION</h3>
     
     <table>
+
+      <!-- <tr>
+        <td><img src="https://cogitmethis.files.wordpress.com/2023/06/ucla-seal.png" alt="UCLA" style="width:150px;height:150px;"></td>
+        <td>PhD Communication Studies <br><i>University of California, Los Angeles</i> <br>(2023-Present)</td>
+      </tr> -->
 
       <tr>
         <td><img src="https://edezach.files.wordpress.com/2020/11/crest-01.png" alt="UCI" style="width:150px;height:150px;"></td>
