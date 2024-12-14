@@ -6,12 +6,25 @@
 <meta http-equiv='cache-control' content='no-cache'> 
 <meta http-equiv='expires' content='0'> 
 <meta http-equiv='pragma' content='no-cache'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
 body, html {
   height: 100%;
   margin: 0;
   font: 400 15px/1.8 "Lato", sans-serif;
   color: #777;
+}
+
+.button {
+  background-color: none; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 a:link {
@@ -85,38 +98,13 @@ h3 {
   color: #111;
 }
 
-.header {
-  overflow: hidden;
-  padding: 10px 16px;
-  background: #022f5c;
-  color: #f1f1f1;
-  z-index: 100;
-  text-align: center;
-  font: 16px "Lato", sans-serif
-}
-
-.header a:hover {
-  background-color: #ddd;
-  z-index: 102;
-  color: black;
-}
-
-.header a.active {
-  background-color: dodgerblue;
-  z-index: 101;
-  color: white;
-}
-
-.header-right {
-  float: right;
-}
-
 .content {
-  padding: 16px;
+  padding: 0px;
 }
 
 .sticky {
   position: fixed;
+  overflow: visible;
   top: 0;
   width: 100%;
 }
@@ -132,105 +120,177 @@ h3 {
   }
 }
 
-/* .dropdown {
-  display: inline-block;
-  position: relative;
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  /* overflow: hidden; */
+  z-index: 100;
 }
 
-.dropdown-options {
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  z-index: 101;
+}
+
+/* Add an active class to highlight the current page */
+.active {
+  background-color: #04AA6D;
+  color: white;
+  z-index: 102;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
   display: none;
 }
 
-.dropdown:hover .dropdown-options {
-  display: block;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 103;
-} */
-
-.dropbtn {
-  background-color: #022f5c;
-  color: white;
-  padding: 2px;
-  font-size: 16px;
-  border: none;
-}
-
+/* Dropdown container - needed to position the dropdown content */
 .dropdown {
-  position: relative;
-  display: inline-block;
+  float: left;
+  overflow: hidden;
+  z-index: 300;
 }
 
+/* Style the dropdown button to fit inside the topnav */
+.dropdown .dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 20px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  z-index: 100;
+}
+
+/* Style the dropdown content (hidden by default) */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: #f9f9f9;
   min-width: 160px;
-  min-height: 32px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 111;
 }
 
+/* Style the links inside the dropdown */
 .dropdown-content a {
+  float: none;
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  text-align: left;
   z-index: 110;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: #f1f1f1;}
-
-.showLinks{
-  position: relative;
-  display: inline-block;
+/* Add a dark background on topnav links and the dropdown button on hover */
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+  color: white;
+  z-index: 111;
 }
 
-.shownLinks {
-  display: none;
-}
-
-.showLinks:hover .shownLinks{
+/* Add a grey background to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+  z-index: 111;
   display: block;
-  background-color: #f1f1f1;
-  color: #022f5c;
+}
+
+/* Show the dropdown menu when the user moves the mouse over the dropdown button */
+.dropdown:hover .dropdown-content {
+  display: block;
+  z-index: 111;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    z-index: 300;
+  }
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 </style>
 </head>
+
 <body>
-
-<div class="bgimg-1" style="min-height:60%">
-  <div class="caption">
-  <!--<span class="border" style="background-color: #4386c9;">ZACHARY P ROSEN</span>-->
-  <span class="border">ZACHARY P ROSEN</span>
-  </div>
-</div>
-
-<div class="header" id="myHeader">
-  <div class="header-right"> 
-    <a href="./intiatives.html">Current Initiatives</a>  |  
-    <a href="./services.html">Services Offered</a>  |  
-    <!-- <a href="./CV.html">Curriculum Vitae</a> -->
-    <div class="showLinks">
-        <button class="dropbtn">Vitae</button>
-        <!-- <div class="dropdown-options"> -->
-        <div class="shownLinks">
-          <a href="https://cogitmethis.files.wordpress.com/2023/06/zacharyrosen-cv-2023.pdf" target="_blank" style="color: #022f5c;">Curriculum Vitae | </a>
-          <a href="https://cogitmethis.files.wordpress.com/2023/07/zacharyrosen-resume-2023.pdf" target="_blank" style="color: #022f5c;">Resume</a>
-        </div>
-    </div> | 
-    <a href="https://cogitmethis.wordpress.com/" target="_blank">Blog</a>  |  
-    <a href="https://github.com/zaqari" target="_blank">Code/Portfolio</a>
-  </div>
-  
-</div>
 
 <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
   <h3 style="text-align:center;color:lightslategrey">ABOUT ME</h3>
@@ -238,60 +298,12 @@ h3 {
   <p>My name is Zachary Rosen. I'm a Data Scientist and computational linguist with expertise in Language Modeling (from LLMs to earlier word vector models), NLU methods for group/consumer insights, and user behavior modeling. I tend to rely on a gammut of tools--no problem requires quite the same modeling approach--but what thematically ties my work together is my emphasis on making sense of human behavior using big data.</p>
   <p>If you're looking to learn a bit more about me, feel free to keep scrolling on this page, or check out my Curriculum Vitae in the link in the banner. You can get a quick summary of some of my more recent research initiatives via the "Current Initiatives" page (link in the banner). And if you want to read about some nerdy, pop-sci data science experiments, head on over to my blog.</p>
   <p>Let me know if you have any questions or want to collaborate on a particular project or idea. You can reach me by email at zrosen[at]uci.edu.</p>
-  <!-- <p>My name is Zachary Rosen. I'm a Data Scientist and human behavior/modeling specialist. While I invite you to take a look at my CV for more information about the roles I've taken on over the years, the thread that I think ties my prior work together is fairly simple: I'm interested in understanding human behavior first and foremost. I think from there, everything else--including building out machine learning algorithms or deploying solutions from companies like openAI--naturally falls into place.</p>
-  <p>Start by understanding people, and you'll accomplish your goals!</p>
-  <p>My main area of interest is in leveraging Large Language Models (LLMs) and LLM generated Embeddings to understand social networks and consumer behavior. In addition to that, my NLU work tends to rely on a mixture of neural network methods, Bayesian Statistics, and Monte Carlo methods.</p>
-  <p>As a data scientist and computational linguist I'm interested in quite a lot of things. But chief among those is that humans are weird, we do bizarre things with language, and those bizarre things are both really beautiful to document and extremely valuable for generating business insights.</p> -->
 </div>
 
-<div class="bgimg-3">
-  <div class="caption">
-  <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;"></span>
-  </div>
-</div>
-
-<div style="position:relative;">
-  <div style="color:white;background-color:#022f5c;text-align:center;padding:50px 80px;text-align: justify;">
-    <h3 style="text-align:center;color:lightslategrey;">RESEARCH & PROFESSIONAL INTERESTS</h3>
-      <table>
-
-        <tr>
-          <td>
-            <p><b><i>User Behavior Modeling:</i></b> <br>One of the unifying themes of my work is understanding social relationships through data. I apply a variety of methodologies to this task. This area of inquiry, when combined with NLP methods, is particularly useful in tracking the spread of policy and/or marketing messages amongst individuals exposed to it.</p>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <p><b><i>Language Modeling/LLMs:</i></b> <br>I group recent advances in LLMs in this category considering that they rely on the same underlying principles as prior language models (transformer models of lexical semantics). Language modeling is a powerful way of representing the meaning of people's utterances online and in person. My work relies primarily on transformer language models like GPT-* and BLOOM, and BERT to capture the variety of ways people express their wants, needs, thoughts, and ideas. The most interesting use of these techniques is in social-linguistic networking--building graphs of how people are connected to one another based on language patterns. This latter point can be used in a variety of ways, ranging from tracking hate speech online to creating marketing segments.</p>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <p><b><i>Bayesian Statistical Modeling:</i></b> <br>As a set of techniques, Bayesian Statistical Modeling (BSM) is an invaluable statistical tool. For example, some prior work I've done has leveraged Latent Mixture Modeling and Monte Carlo sampling to uncover unspoken customer motiviations for purchasing products based on the attributes of those products and customer purchasing history.</p>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <p><b><i>Deep Learning:</i></b> <br>Deep learning continues to be a valuable tool in any data scientist's toolkit. For example, it is costly to fine-tune LLMs. However, some of my prior work at Wizard showed that you could use LLM generated embeddings and pass those to an LSTM to create a much more efficient classifier with significantly less required computational overhead.</p>
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
-
-<div class="bgimg-2">
-  <div class="caption">
-  <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;"></span>
-  </div>
-</div>
-
-<div style="position:relative;">
+<!-- <div style="position:relative;">
   <div style="color:white;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
     <h3 style="text-align:center;color:lightslategrey;">RECENT PUBLICATIONS</h3>
-    <p>Rosen, Z. and Dale, R. (<i>in revision</i>). <a target="_blank" href="">BERTs of a Feather: Studying Inter- and Intra-group Communication Using Information Theory and Artificially Intelligent Language Models.</a> <i>Behavior Research Methods</i></p>
+    <p>Rosen, Z. and Dale, R. (2023). <a target="_blank" href="">BERTs of a Feather: Studying Inter- and Intra-group Communication Using Information Theory and Artificially Intelligent Language Models.</a> <i>Behavior Research Methods</i></p>
     <p>&nbsp;</p>
     <p>Rosen, Z. (2022). <a target="_blank" href="https://journals.sagepub.com/doi/abs/10.1177/0261927X221095865">A BERT's Eye View: A Big Data Framework for Assessing Language Convergence and Accommodation.</a> <i>Journal of Language and Social Psychology (42,1)</i></p>
     <p>&nbsp;</p>
@@ -307,34 +319,18 @@ h3 {
     <p><i>Peg Taylor Award for Excellence in Communications <br>Orange Coast College (2011)</i></p>
   
   </div>
-</div>
-
-<div class="bgimg-4"></div>
-
-<!-- <div style="position:relative;">
-  <div style="color:white;background-color:#022f5c;text-align:center;padding:50px 80px;text-align: justify;">
-    <h3 style="text-align:center;color:lightslategrey;">CURRICULUM VITAE</h3>
-    <table stye="align:center;" rules="rows">
-      <tr><td style="width:30%;font-size: 16px; text-align: left;"><a href="./teaching.html">Teaching Vitae</a></td></tr>
-      <tr><td style="width:30%px;font-size: 16px;text-align: left;"><a href="./consulting.html">Consulting Vitae</a></td></tr>
-      <tr><td style="width:30%;font-size: 16px;text-align: left;"><a href="./programming.html">Programming Vitae</a></td></tr>
-      <tr><td style="width:30%;font-size: 16px;text-align: left;"><a href="./talks.html">Presentations/Guest Lectures Vitae</a></td></tr>
-    </table>
-  </div>
 </div> -->
 
-<!-- <div class="bgimg-2"></div> -->
-
 <div style="position:relative;">
-  <div style="color:white;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+  <div style="color:white;background-color:#03396f;text-align:center;padding:50px 80px;text-align: justify;">
     <h3 style="text-align:center;color:lightslategrey;">EDUCATION</h3>
     
     <table>
-
-      <!-- <tr>
-        <td><img src="https://cogitmethis.files.wordpress.com/2023/06/ucla-seal.png" alt="UCLA" style="width:150px;height:150px;"></td>
-        <td>PhD Communication Studies <br><i>University of California, Los Angeles</i> <br>(2023-Present)</td>
-      </tr> -->
+      
+      <tr>
+        <td><img src="https://cogitmethis.wordpress.com/wp-content/uploads/2024/07/ucla.png" alt="UCI" style="width:150px;height:150px;"></td>
+        <td>PhD Communication <br><i>University of California, Los Angeles</i> <br>(2024-2027)</td>
+      </tr>  
 
       <tr>
         <td><img src="https://edezach.files.wordpress.com/2020/11/crest-01.png" alt="UCI" style="width:150px;height:150px;"></td>
@@ -359,7 +355,7 @@ h3 {
 </div>
 
 
-<div class="bgimg-5">
+<div class="bgimg-2">
   <div class="caption">
   <span class="border" style="font-size: 18px;">Stay Curi<a target="_blank" href="https://www.youtube.com/watch?v=0qDtHdloK44&ab_channel=TWLOHA">o</a>us</span>
   </div>
@@ -401,6 +397,43 @@ h3 {
       header.classList.add("sticky");
     } else {
       header.classList.remove("sticky");
+    }
+  }
+</script>
+
+<script>
+    function navmini() {
+        var x = document.getElementById("myHeader");
+        if (x.className === "topnav") {
+        x.className += " responsive";
+        } else {
+        x.className = "topnav";
+        }
+    }
+
+  // Get the modal
+  var modal = document.getElementById("services");
+  
+  // Get the button that opens the modal
+  var svcbtn = document.getElementById("servicesbtn");
+  
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  
+  // When the user clicks the button, open the modal 
+  svcbtn.onclick = function() {
+    modal.style.display = "block";
+  }
+  
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
     }
   }
   </script>
