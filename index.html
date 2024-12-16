@@ -313,8 +313,7 @@ h3 {
     <a href="#" id="biobtn">Bio</a> 
     <a href="#" id="initiativesbtn">Publications & Initiatives</a> 
     <a href="#" id="servicesbtn">Services Offered</a>  
-    <!-- <a href="./services.html">Services Offered</a> -->
-      <!-- <a href="https://cogitmethis.wordpress.com/" target="_blank">Blog</a>  -->
+    <a href="https://cogitmethis.wordpress.com/" id="blogbtn" target="_blank">Blog</a> 
       <div class="dropdown">
         <button class="dropbtn">
             Vitae 
@@ -456,6 +455,26 @@ h3 {
     modal_name = "bio"
     modal = document.getElementById(modal_name);
     var span = document.getElementById("bioclose");
+    // span = document.getElementsByClassName("close")[1]
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    modal.style.display = "block";
+  }
+
+
+  //              BLOG TAB
+  // Get the button that opens the modal
+  var itbtn = document.getElementById("blogbtn");
+  
+  // When the user clicks the button, open the modal 
+  itbtn.onclick = function() {
+    if (modal != null){
+      modal.style.display = "none";
+    }
+    modal_name = "blog"
+    modal = document.getElementById(modal_name);
+    var span = document.getElementById("blogclose");
     // span = document.getElementsByClassName("close")[1]
     span.onclick = function() {
       modal.style.display = "none";
