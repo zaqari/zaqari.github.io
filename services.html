@@ -52,6 +52,37 @@ a:visited {
   min-height: 15%;
 }
 
+.grey-block{
+  color: white;
+  background-color: #777;
+  text-align: left;
+  padding: 50px 80px;
+}
+
+.grey-H3{
+  color: white;
+  text-align: center;
+}
+
+.contact{
+  background-color: #1605a6;
+  color: white;
+  text-align: left;
+  padding: 50px 80px;
+}
+
+.white-block{
+  color: #777;
+  background-color: white;
+  text-align: left;
+  padding: 50px 80px;
+}
+
+.white-H3{
+  color: #777;
+  text-align: center;
+}
+
 .caption {
   position: absolute;
   left: 0;
@@ -92,46 +123,48 @@ h3 {
   </div>
 </div>
 
-<div id="stats-analysis" style="color: #777;background-color:white;text-align:left;padding:50px 80px;">
-  <h3 style="text-align:center;color:lightslategrey">LLM Product Design, Development, Deployment</h3>
+<div id="LLMs" class="white-block">
+  <h3 class="white-H3">LLM Product Design, Development, Deployment</h3>
   <p>Large Language models are the <i>haute du jour</i>, but converting synthetic text outputs from these models to an actionable product is a significant lift.</p>
   <p>Let me help you design your LLM product. We'll work together to identify the appropriate use-case for your model, how to implement it with ethical restrictions, and work to build the appropriate databases and resources to make it work.</p>
 </div>
 
-<div id="ml-rig" style="color: white;background-color:#777;text-align:left;padding:50px 80px;">
-  <h3 style="text-align:center;color:white">Text-Based User Behavior Modeling and Consulting</h3>
+<div id="UG" class="grey-block">
+  <h3 class="grey-H3">Text-Based User Behavior Modeling and Consulting</h3>
   <p>People congregate. Full stop. We form groups and networks as naturally as we breathe. And we often do that through language and other communicative means.</p>
   <p>I'd love to work with you on unpacking the hidden networks--the communities just under the surface--of the folks you want to reach. My work on creating user graphs via convergence modeling has been helpful in tracking the spread of hate speech online for nonprofits, assessing campaign efficacy, and even for creating customer segments based on inferred communities in order to save on marketing materials (and increasing average purchase per sale for companies by ~10x in the process).</p>
   <p>Learn who your communities of service, your customers (if that's your thing), or your users <i>are</i> by learning what communities they're a part of. All through the most human and most common medium around--our language.</p>
 </div>
 
-<div id="stats-analysis" style="color: #777;background-color:white;text-align:left;padding:50px 80px;">
-  <h3 style="text-align:center;color:lightslategrey">Custom Machine Learning Ready Computer Assembly</h3>
-  <p>If you're a researcher like me, you have two choices: either pay Big Tech CEOs like Bezos and Pichai to use AWS or GCP, or fork over $4k (USD) or more to get a machine learning enabled computer ($4k is really the barest, minimum price in this domain).</p>
-  <p>There is a third option. Build your own machine learning rig from scratch for a fraction of the cost.</p>
-  <p>It takes time and a little domain knowledge to pull that off, but I can work with you to price out and build a machine learning ready computer for a fraction of the cost of either buying one ready made, or paying big tech to keep using theirs.</p>
-</div>
-
-<div id="ml-rig" style="color: white;background-color:#777;text-align:left;padding:50px 80px;">
-  <h3 style="text-align:center;color:white">Generative Exploratory Data Intelligence (GEDI)</h3>
+<div id="GEDI" class="white-block">
+  <h3 class="white-H3">Generative Exploratory Data Intelligence (GEDI)</h3>
   <p>There's a lot about contemporary approaches to Exploratory Data Analysis that leaves me feeling uncomfortable when I work with folks and their data.</p>
   <p>Off the shelf tools for making sense of unstructured data tend to be poor characterizations of the actual distribution in that data. If you're dealing with text, a transformer based topic model (based on clustering and TFIDF) is likely showing you the results of that clustering process in a way that reporting on it directly to a client is liable to lead them astray. Extracting meaning from <i>your</i> work requires a computational linguist's level of understanding, and most stakeholders don't take the time to listen to pracitioners like you to hash out what is actually happening in the reporting you present.</p>
   <p>You <i>could</i> use an LLM to systematically summarize the data. But there-in lies a new set of problems: between the window size which precludes you from looking at truly large datasets, the cost for running individual sentences, and the risk (<a href="https://arxiv.org/abs/2401.11817" target="_blank">or rather, the gaurantee</a>) of outright "hallucinated" results that thus requires you to manually analyze the data anyways, the risks far outweigh the rewards.</p>
   <p>Generative Exploratory Data Intelligence (GEDI: intelligence in the sense of "intel" not agentivity, and pronounced like the way a Star Wars geek would pronounce it) is an outright paradigm inversal of the way you would typically use an LLM to explore data. If you're interested in that kind of analysis, let's talk about sharing the templates and codebase required to do that.</p>
 </div>
 
-<div id="stats-analysis" style="color: #777;background-color:white;text-align:left;padding:50px 80px;">
-  <h3 style="text-align:center;color:lightslategrey">Statistical Modeling/Consulting</h3>
+<div id="stats-analysis" class="grey-block">
+  <h3 class="grey-H3">Statistical Modeling/Consulting</h3>
   <p>Sometimes you can't just run a regression model and get the insights you need.</p>
   <p>A lot of statistical methods for extracting insights from data are rooted in a lot of assumptions that might hurt their usability when you report on them. Regression, for example, is highly interpretable when compared to other deep learning methods, but it's inappropriate for time series forecasting or making sense of stochastic processes without modification (hence the need for Granger regression and other techniques). And even then, sometimes you might need something a little more tailored in order to answer the questions you have about people from their data if you need a direct answer to that question.</p>
   <p>Understanding the link between model formalisms and the hypotheses they test is my jam. I'd love to help you flesh out your specific questions, pick or design a statistical model to answer those questions, and get you the code required to do that.</p>
 </div>
 
-<div id="ml-rig" style="color: white;background-color:#1605a6;text-align:left;padding:50px 80px;">
-  <h3 style="text-align:center;color:lightslategrey">Contact me!</h3>
+<div class="bgimg-3" style="min-height: 15%;"></div>
+
+<div id="contact-form" class="contact">
+  <h3 class="grey-H3">Contact me!</h3>
   <p>Got an idea for a project? Thoughts you want to share with me? Fill out the form below and let's talk!</p>
   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd-Q-rvTsYE3SVjAWt3E3JIPs9-xpg9hB683IV2QN3HdtJu5g/viewform?embedded=true" style="width: 98%; height: 300px; border: none;">Loading…</iframe>
-</div>
+</div>  
+
+<!-- <div id="ml-rig" class="">
+  <h3 class="">Custom Machine Learning Ready Computer Assembly</h3>
+  <p>If you're a researcher like me, you have two choices: either pay Big Tech CEOs like Bezos and Pichai to use AWS or GCP, or fork over $4k (USD) or more to get a machine learning enabled computer ($4k is really the barest, minimum price in this domain).</p>
+  <p>There is a third option. Build your own machine learning rig from scratch for a fraction of the cost.</p>
+  <p>It takes time and a little domain knowledge to pull that off, but I can work with you to price out and build a machine learning ready computer for a fraction of the cost of either buying one ready made, or paying big tech to keep using theirs.</p>
+</div> -->
 
 <!-- <div class="bgimg-3" style="min-height: 15%;"></div> -->
 
