@@ -309,9 +309,9 @@ h3 {
 <div class="bgimg-6" style="min-height:100%">
   <!-- Top-Nav Bar -->
   <div class="topnav" id="myHeader" style="min-height: 60px">
-    <a href="#" id="biobtn">Bio</a> 
-    <a href="#" id="initiativesbtn">Publications & Initiatives</a> 
-    <a href="#" id="servicesbtn">Services Offered</a>  
+    <a href="#" data-tag="bio" data-url="./aboutme.html" id="biobtn">Bio</a> 
+    <a href="#" data-tag="initiatives" data-url="./intiatives.html" id="initiativesbtn">Publications & Initiatives</a> 
+    <a href="#" data-tag="services" data-url="./services.html" id="servicesbtn">Services Offered</a>  
       <div class="dropdown">
         <button class="dropbtn">
             Vitae 
@@ -338,31 +338,11 @@ h3 {
 
 
 <!-- MODAL CONTENTS -->
-<div id="bio" class="modal">
+<div id="simplewindow" class="modal">
   <div class="modal-content">
-    <span class="close" id="bioclose">&times;</span>
+    <span class="close" id="simpleclose">&times;</span>
     <div class="textboximg-1">
-      <iframe src="./aboutme.html" style="width: 79%; height: 90%; position: absolute; left:4.5%; top:5%" frameBorder="0"></iframe>
-    </div>
-    <!-- <iframe src="./aboutme.html" style="width: 100%; height: 100%;" frameBorder="0"></iframe> -->
-  </div>
-</div>
-
-<div id="services" class="modal">
-  <div class="modal-content">
-    <span class="close" id="servicesclose">&times;</span>
-    <div class="textboximg-1">
-      <iframe src="./services.html" style="width: 79%; height: 90%; position: absolute; left:4.5%; top:5%" frameBorder="0"></iframe>
-    </div>
-    <!-- <iframe src="./services.html" style="width: 100%; height: 100%;" frameBorder="0"></iframe> -->
-  </div>
-</div>
-
-<div id="initiatives" class="modal">
-  <div class="modal-content">
-    <span class="close" id="initiativeclose">&times;</span>
-    <div class="textboximg-1">
-      <iframe src="./intiatives.html" style="width: 79%; height: 90%; position: absolute; left:4.5%; top:5%" frameBorder="0"></iframe>
+      <iframe id="modalContentFrame" src="" style="width: 79%; height: 90%; position: absolute; left:4.5%; top:5%" frameBorder="0"></iframe>
     </div>
     <!-- <iframe src="./intiatives.html" style="width: 100%; height: 100%;" frameBorder="0"></iframe> -->
   </div>
@@ -370,6 +350,10 @@ h3 {
 
 
 </body>
+
+<script>
+  
+</script>
 
 <script>
   window.onscroll = function() {myFunction()};
@@ -400,96 +384,28 @@ h3 {
   var modal_name = null;
 
   
-  
-  
-  //              SERVICES OFFERED TAB
-  // Get the button that opens the modal
-  var svcbtn = document.getElementById("servicesbtn");
+  const list = document.getElementById('myHeader');
 
-  // When the user clicks the button, open the modal 
-  svcbtn.onclick = function() {
-    if (modal != null){
-      modal.style.display = "none";
+  list.addEventListener('click', function(event) {
+    if (event.target.tagName === 'A' & event.target.getAttribute('href') === "#") {
+      if (modal != null){
+        modal.style.display = "none";
+      }
+      modal_name = event.target.getAttribute('data-tag');
+      modal_url = event.target.getAttribute('data-url');
+      console.log(modal_name);
+      console.log(modal_url);
+      modal = document.getElementById("simplewindow");
+      document.getElementById('modalContentFrame').src = modal_url;
+      var span = document.getElementById("simpleclose");
+      
+      span.onclick = function() {
+          modal.style.display = "none";
+        }
+        modal.style.display = "block";
+      }
     }
-    modal_name = "services"
-    modal = document.getElementById(modal_name);
-    // span = document.getElementsByClassName("close")[0];
-    var span = document.getElementById("servicesclose");
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-    modal.style.display = "block";
-  }
-
-
-
-  //              INITIATIVES TAB
-  // Get the button that opens the modal
-  var itbtn = document.getElementById("initiativesbtn");
-  
-  // When the user clicks the button, open the modal 
-  itbtn.onclick = function() {
-    if (modal != null){
-      modal.style.display = "none";
-    }
-    modal_name = "initiatives"
-    modal = document.getElementById(modal_name);
-    var span = document.getElementById("initiativeclose");
-    // span = document.getElementsByClassName("close")[1]
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-    modal.style.display = "block";
-  }
-
-  //              BIO TAB
-  // Get the button that opens the modal
-  var itbtn = document.getElementById("biobtn");
-  
-  // When the user clicks the button, open the modal 
-  itbtn.onclick = function() {
-    if (modal != null){
-      modal.style.display = "none";
-    }
-    modal_name = "bio"
-    modal = document.getElementById(modal_name);
-    var span = document.getElementById("bioclose");
-    // span = document.getElementsByClassName("close")[1]
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-    modal.style.display = "block";
-  }
-
-
-  //              BLOG TAB
-  // Get the button that opens the modal
-  var itbtn = document.getElementById("blogbtn");
-  
-  // When the user clicks the button, open the modal 
-  itbtn.onclick = function() {
-    if (modal != null){
-      modal.style.display = "none";
-    }
-    modal_name = "blog"
-    modal = document.getElementById(modal_name);
-    var span = document.getElementById("blogclose");
-    // span = document.getElementsByClassName("close")[1]
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-    modal.style.display = "block";
-  }
-
-  
-  // When the user clicks anywhere outside of the modal, close it
-  // window.onclick = function(event) {
-  //   modal = document.getElementById(modal_name);
-    
-  //   if (event.target == modal) {
-  //     modal.style.display = "none";
-  //   }
-  // }
+  );
 </script>
 
 
