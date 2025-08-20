@@ -112,6 +112,18 @@ a:visited {
   padding: 50px 80px;
 }
 
+.black-block{
+  color: white;
+  background-color: #000000;
+  text-align: left;
+  padding: 50px 80px;
+}
+
+.black-H3{
+  color: white;
+  text-align: right;
+}
+
 .white-H3{
   color: #777;
   text-align: right;
@@ -156,6 +168,34 @@ h3 {
     <span class="border">3k+ EVERYDAY CONVERSATIONS</span>
   </div>
 </div>
+
+<div class="black-block">
+  <h3 class="black-H3">Methods Descriptions</h3>
+  
+  <details>
+    <summary><b>Descriptions</b></summary>
+    <details>
+      <summary><b>Convergence-Entropy</b></summary>
+      <p>Convergence-Entropy (CE: <a href="https://link.springer.com/article/10.3758/s13428-023-02267-2" target="_blank">Rosen & Dale 2024</a>) is a measurement of how much the information in one utterance $x$ could be recovered from the content in a separate utterance $y$. It uses a large language model to generate representations of each token and it's contextual meaning and iterates over those representations to calculate the Shannon entropy for each token in some utterance $x$.</p>
+      <p>
+        $\begin{aligned} E_{xi} &= LLM(i \in x) \\ P(E_{xi}|E_y) &= P_{N} \left( \min_j (E_{xi}, E_{yj}) | \mu=0, \sigma \right) \\ H[x|y] &= -\sum_i P(E_{xi}|E_y) \log P(E_{xi}|E_y) \end{aligned}$
+      </p>
+      <p>Time-series and plots are plots are of convergence entropy for a prior utterance $x$ during conversation, and subsequent utterances $y$ that occur $t$ turns after the utterance $x$.</p>
+    </details>
+
+    <details>
+      <summary><b>Allan Variance</b></summary>
+      <p>Allan Variance is a measurement of variation over time in a signal or statistical distribution (<a href="http://ieeexplore.ieee.org/document/7406774/" target="_blank">Allan & Levine 2016</a>; <a href="https://ieeexplore.ieee.org/document/1537453" target="_blank">Snyder 1981</a>) and is measured as the total difference in a measurement for a time-series, minus it's future value and the how much that future value varies from the subsequent measurement. Formulaically, it is calculated as follows:</p>
+      <p>$AVAR = \frac{1}{2\tau^2} \Big\langle \left( {t+2n} - 2{t+n} - t  \right)^2 \Big\rangle$</p>
+      <p>Notably, the log-log transformed Allan Variance and temporal measurement for a given signal can be used to calculate exponential growth in a signal, $\alpha$ (<a href="https://doi.apa.org/doi/10.1037/xge0000021" target="_blank">Abney et al 2014</a>) -- which is used to characterize shifts in shared semantic and conceptual structures during conversation in the rest of this report.</p>
+    </details>
+  
+  </details>
+  
+
+</div>
+
+<div class="bgimg-3" style="min-height: 5%;"></div>
 
 <div class="white-block">
   <h3 class="white-H3">Monolingual English Conversations</h3>
@@ -494,7 +534,7 @@ h3 {
       <td></td>
       <td>-1.25e-03 (2.42e-04)***</td>
     </tr>
-    <tr>
+    <tr  class="fancy-row">
       <td>thoughts became more alike</td>
       <td></td>
       <td></td>
@@ -549,61 +589,55 @@ h3 {
   </thead>
   <tbody>
     <tr>
-      <td>x_conv_leader</td>
-      <td>1.255640e+06</td>
-      <td>1.255488e+06</td>
-      <td>152.295060</td>
-    </tr>
-    <tr>
-      <td>x_in_common</td>
+      <td>in_common</td>
       <td>1.209016e+06</td>
       <td>1.208891e+06</td>
       <td>124.934215</td>
     </tr>
     <tr>
-      <td>x_responsive_1</td>
+      <td>responsive 1</td>
       <td>7.949952e+05</td>
       <td>7.949944e+05</td>
       <td>0.792553</td>
     </tr>
     <tr>
-      <td>x_responsive_2</td>
+      <td>responsive 2</td>
       <td>7.766488e+05</td>
       <td>7.766099e+05</td>
       <td>38.846598</td>
     </tr>
     <tr>
-      <td>x_responsive_3</td>
+      <td>responsive 3</td>
       <td>7.193039e+05</td>
       <td>7.192641e+05</td>
       <td>39.721639</td>
     </tr>
     <tr>
-      <td>x_our_thoughts_synced_up_sr1</td>
+      <td>our thoughts synced up (sr1)</td>
       <td>9.603406e+05</td>
       <td>9.603398e+05</td>
       <td>0.729732</td>
     </tr>
     <tr>
-      <td>x_developed_joint_perspective_sr2</td>
+      <td>developed joint perspective (sr2)</td>
       <td>1.060969e+06</td>
       <td>1.060946e+06</td>
       <td>23.073274</td>
     </tr>
     <tr>
-      <td>x_thoughts_became_more_alike_sr5</td>
+      <td>thoughts became more alike (sr5)</td>
       <td>1.068110e+06</td>
       <td>1.068094e+06</td>
       <td>16.714116</td>
     </tr>
     <tr>
-      <td>x_saw_world_in_same_way_sr8</td>
+      <td>saw world in same way (sr8)</td>
       <td>1.078472e+06</td>
       <td>1.078446e+06</td>
       <td>26.539339</td>
     </tr>
     <tr>
-      <td>x_you_are_good_listener</td>
+      <td>you are good listener</td>
       <td>8.637957e+05</td>
       <td>8.637052e+05</td>
       <td>90.436856</td>
