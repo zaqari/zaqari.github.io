@@ -1,0 +1,714 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$']]
+    }
+  };
+</script>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+hr {
+  border-width: 3px;
+}
+
+.dataframe {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.dataframe thead tr {
+    background-color: #000a98;
+    color: #ffffff;
+    text-align: left;
+}
+
+.dataframe th,
+.dataframe td {
+    padding: 12px 15px;
+}
+
+.dataframe tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.dataframe tbody tr.fancy-row {
+    padding: 0px;
+    font-weight: bold;
+    background-color: #ffffff;
+    color: #000;
+}
+
+.dataframe tbody tr:last-of-type {
+    border-bottom: 2px solid #000a98;
+}
+
+.dataframe tbody tr.active-row {
+    font-weight: bold;
+    background-color: #000a98;
+    color: #ffffff;
+}
+
+a:link {
+  color: rgb(201, 178, 5);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(70, 5, 201);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.bgimg-3 {
+  background-image: url("https://www.shutterstock.com/image-photo/vertical-collage-image-black-white-600nw-2301503515.jpg");
+  min-height: 80%;
+}
+
+.grey-block{
+  color: white;
+  background-color: #777;
+  text-align: left;
+  padding: 50px 80px;
+}
+
+.grey-H3{
+  color: white;
+  text-align: right;
+}
+
+.white-block{
+  color: #777;
+  background-color: white;
+  text-align: left;
+  padding: 50px 80px;
+}
+
+.white-H3{
+  color: #777;
+  text-align: right;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="bgimg-3" style="min-height: 50%;">
+  <div class="caption" id="title">
+    <span class="border">3k+ EVERYDAY CONVERSATIONS</span>
+  </div>
+</div>
+
+<div class="white-block">
+  <h3 class="white-H3">Monolingual English Conversations</h3>
+  <details>
+    <summary><b>Summary and report</b></summary>
+    <div>
+      <p>Concepts shared between utterances have a durative, though temporally limited effect. What concepts are expressed by any one speaker appear to more strongly influence/are easier to recover from  the same speaker's subsequent utterances, though utterances clearly influence the concepts expressed by both the "self" and "others" during interaction. The change in Entropy (per the curves visualized below) is exponential.</p>
+      <p>Exponential growth parameters for $\alpha$ are as follows</p>
+      <ul>
+        <li>self: ($M=-.199, SE=.001, t(519389)=-144.27, p < 1e^{-9}$)</li>
+        <li>other: ($M=-.141, SE=.001, t(509862)=-79.32, p< 1e^{-9}$)</li>
+        <li>other-self: ($M=-.178, SE=.002, t(496276)=-114.87, p< 1e^{-9}$)</li>
+      </ul>
+      <iframe src="./plots/eng-main-resid.html" style="width: 100%; height: 500px; left:4.5%; top:5%" frameBorder="0"></iframe>
+      <iframe src="./plots/eng-main-delta.html" style="width: 100%; height: 500px; left:4.5%; top:5%" frameBorder="0"></iframe>
+    </div>
+    <details>
+      <summary><b>Individual Corpora</b></summary>
+      
+      
+<div>
+    <em>SCoSE</em>
+    <iframe src="./plots/eng-resid-SCoSE.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/eng-delta-SCoSE.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+<div>
+    <em>DISPEL</em>
+    <iframe src="./plots/eng-resid-DISPEL.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/eng-delta-DISPEL.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+<div>
+    <em>CORAAL</em>
+    <iframe src="./plots/eng-resid-CORAAL.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/eng-delta-CORAAL.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+<div>
+    <em>Graesser</em>
+    <iframe src="./plots/eng-resid-Graesser.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/eng-delta-Graesser.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+<div>
+    <em>CANDOR</em>
+    <iframe src="./plots/eng-resid-CANDOR.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/eng-delta-CANDOR.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+<div>
+    <em>med_school</em>
+    <iframe src="./plots/eng-resid-med_school.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/eng-delta-med_school.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+<div>
+    <em>callfriend</em>
+    <iframe src="./plots/eng-resid-callfriend.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/eng-delta-callfriend.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+<div>
+    <em>GCSAusE</em>
+    <iframe src="./plots/eng-resid-GCSAusE.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/eng-delta-GCSAusE.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+<div>
+    <em>MICASE</em>
+    <iframe src="./plots/eng-resid-MICASE.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/eng-delta-MICASE.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+<div>
+    <em>Miao-fNIRS</em>
+    <iframe src="./plots/eng-resid-Miao-fNIRS.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/eng-delta-Miao-fNIRS.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+<div>
+    <em>Frederiksen</em>
+    <iframe src="./plots/eng-resid-Frederiksen.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/eng-delta-Frederiksen.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+<div>
+    <em>callhome</em>
+    <iframe src="./plots/eng-resid-callhome.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/eng-delta-callhome.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+<div>
+    <em>SBCSAE</em>
+    <iframe src="./plots/eng-resid-SBCSAE.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/eng-delta-SBCSAE.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+<div>
+    <em>CABNC</em>
+    <iframe src="./plots/eng-resid-CABNC.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/eng-delta-CABNC.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+    
+    </details>
+    
+
+  </details>
+</div>
+
+<div class="bgimg-3" style="min-height: 5%;"></div>
+
+<div class="grey-block">
+  <h3 class="grey-H3">CANDOR Exploratory Study</h3>
+  <details>
+    <summary><b>Summary and report</b></summary>
+    <p>Results indicate that it is not merely semantic similarity that facilitates terminal perceptions of shared perspective and positive assessment of one's discursive partners, but the degree to which speakers and partners' responses follow population norms for how much information is carried over from one utterance to the next.</p>
+    <p>People do not look for similarity, they look for synergy--the ability to jointly move from one set of concepts to the next with their partner as a marker of conversational quality.</p>
+    <div>
+      <table  class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>parameter</th>
+      <th>Linear Model</th>
+      <th>Squared Model</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="fancy-row">
+      <td>developed joint perspective</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Intercept</td>
+      <td>5.06e+00 (2.99e-03)***</td>
+      <td>5.06e+00 (3.03e-03)***</td>
+    </tr>
+    <tr>
+      <td>resid</td>
+      <td>1.30e-05 (2.13e-03)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>resid2</td>
+      <td></td>
+      <td>-1.13e-03 (2.35e-04)***</td>
+    </tr>
+    <tr class="fancy-row">
+      <td>in common</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Intercept</td>
+      <td>5.60e+00 (3.89e-03)***</td>
+      <td>5.6e+00 (3.94e-03)***</td>
+    </tr>
+    <tr>
+      <td>resid</td>
+      <td>-1.04e-05 (2.77e-03)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>resid2</td>
+      <td></td>
+      <td>3.42e-03 (3.06e-04)***</td>
+    </tr>
+    <tr  class="fancy-row">
+      <td>our thoughts synced up</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Intercept</td>
+      <td>3.98e+00 (2.50e-03)***</td>
+      <td>3.98e+00 (2.53e-03)***</td>
+    </tr>
+    <tr>
+      <td>resid</td>
+      <td>-3.58e-06 (1.78e-03)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>resid2</td>
+      <td></td>
+      <td>1.68e-04 (1.97e-04)</td>
+    </tr>
+    <tr class="fancy-row">
+      <td>responsive 1</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Intercept</td>
+      <td>5.59e+00 (1.87e-03)***</td>
+      <td>5.59e+00 (1.89e-03)***</td>
+    </tr>
+    <tr>
+      <td>resid</td>
+      <td>-1.01e-05 (1.33e-03)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>resid2</td>
+      <td></td>
+      <td>-1.31e-04 (1.47e-04)</td>
+    </tr>
+    <tr class="fancy-row">
+      <td>responsive 2</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Intercept</td>
+      <td>5.68e+00 (1.81e-03)***</td>
+      <td>5.68e+00 (1.83e-03)***</td>
+    </tr>
+    <tr>
+      <td>resid</td>
+      <td>5.69e-06 (1.29e-03)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>resid2</td>
+      <td></td>
+      <td>-8.85e-04 (1.42e-04)***</td>
+    </tr>
+    <tr class="fancy-row">
+      <td>responsive 3</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Intercept</td>
+      <td>5.94e+00 (1.63e-03)***</td>
+      <td>5.94e+00 (1.65e-03)***</td>
+    </tr>
+    <tr>
+      <td>resid</td>
+      <td>-3.09e-06 (1.16e-03)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>resid2</td>
+      <td></td>
+      <td>-8.08e-04 (1.28e-04)***</td>
+    </tr>
+    <tr class="fancy-row">
+      <td>saw world in same way</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Intercept</td>
+      <td>4.6e+00 (3.09e-03)***</td>
+      <td>4.6e+00 (3.13e-03)***</td>
+    </tr>
+    <tr>
+      <td>resid</td>
+      <td>-1.64e-05 (2.2e-03)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>resid2</td>
+      <td></td>
+      <td>-1.25e-03 (2.42e-04)***</td>
+    </tr>
+    <tr>
+      <td>thoughts became more alike</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Intercept</td>
+      <td>4.58e+00 (3.03e-03)***</td>
+      <td>4.58e+00 (3.07e-03)***</td>
+    </tr>
+    <tr>
+      <td>resid</td>
+      <td>1.77e-05 (2.16e-03)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>resid2</td>
+      <td></td>
+      <td>-9.73e-04 (2.38e-04)**</td>
+    </tr>
+    <tr class="fancy-row">
+      <td>you are good listener</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Intercept</td>
+      <td>7.58e+00 (2.11e-03)***</td>
+      <td>7.58e+00 (2.14e-03)***</td>
+    </tr>
+    <tr>
+      <td>resid</td>
+      <td>1.08e-05 (1.50e-03)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>resid2</td>
+      <td></td>
+      <td>-1.58e-03 (1.66e-04)***</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+    <div>
+      <table  class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>var</th>
+      <th>linear</th>
+      <th>squared</th>
+      <th>linear - squared</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>x_conv_leader</td>
+      <td>1.255640e+06</td>
+      <td>1.255488e+06</td>
+      <td>152.295060</td>
+    </tr>
+    <tr>
+      <td>x_in_common</td>
+      <td>1.209016e+06</td>
+      <td>1.208891e+06</td>
+      <td>124.934215</td>
+    </tr>
+    <tr>
+      <td>x_responsive_1</td>
+      <td>7.949952e+05</td>
+      <td>7.949944e+05</td>
+      <td>0.792553</td>
+    </tr>
+    <tr>
+      <td>x_responsive_2</td>
+      <td>7.766488e+05</td>
+      <td>7.766099e+05</td>
+      <td>38.846598</td>
+    </tr>
+    <tr>
+      <td>x_responsive_3</td>
+      <td>7.193039e+05</td>
+      <td>7.192641e+05</td>
+      <td>39.721639</td>
+    </tr>
+    <tr>
+      <td>x_our_thoughts_synced_up_sr1</td>
+      <td>9.603406e+05</td>
+      <td>9.603398e+05</td>
+      <td>0.729732</td>
+    </tr>
+    <tr>
+      <td>x_developed_joint_perspective_sr2</td>
+      <td>1.060969e+06</td>
+      <td>1.060946e+06</td>
+      <td>23.073274</td>
+    </tr>
+    <tr>
+      <td>x_thoughts_became_more_alike_sr5</td>
+      <td>1.068110e+06</td>
+      <td>1.068094e+06</td>
+      <td>16.714116</td>
+    </tr>
+    <tr>
+      <td>x_saw_world_in_same_way_sr8</td>
+      <td>1.078472e+06</td>
+      <td>1.078446e+06</td>
+      <td>26.539339</td>
+    </tr>
+    <tr>
+      <td>x_you_are_good_listener</td>
+      <td>8.637957e+05</td>
+      <td>8.637052e+05</td>
+      <td>90.436856</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+    
+
+  </details>
+</div>
+
+<div class="bgimg-3" style="min-height: 5%;"></div>
+
+<div class="white-block">
+  <h3 class="white-H3">Multilingual Conversations Across Languages</h3>
+  <details>
+    <summary><b>Summary and report</b></summary>
+    <p>Analyses of 8 additional languages, plus a subset of the English conversation data, replicates the same temporal and interpersonal characteristics of the English monolingual study.</p>
+    <p>Exponential growth parameters for $\alpha$ are as follows</p>
+    <ul>
+      <li>self: ($M=-.111, SE=.001, t(347984)=-74.79, p< 1e^{-9}$)</li>
+      <li>other: ($M=-.060, SE=.002, t(285890)=-34.45, p< 1e^{-9}$)</li>
+      <li>other-self: ($M=-.103, SE=.00189, t(2833643)=-54.67, p<`e^{-9}$)</li>
+    </ul>
+    <iframe src="./plots/multi-main-resid.html" style="width: 100%; height: 500px; left:4.5%; top:5%" frameBorder="0"></iframe>
+      <iframe src="./plots/multi-main-delta.html" style="width: 100%; height: 500px; left:4.5%; top:5%" frameBorder="0"></iframe>
+    
+      <details>
+        <summary><b>Individual Languages</b></summary>
+        
+        
+<div>
+    <em>deu</em>
+    <iframe src="./plots/multi-resid-deu.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/multi-delta-deu.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+<div>
+    <em>spa</em>
+    <iframe src="./plots/multi-resid-spa.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/multi-delta-spa.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+<div>
+    <em>eng</em>
+    <iframe src="./plots/multi-resid-eng.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/multi-delta-eng.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+<div>
+    <em>fra</em>
+    <iframe src="./plots/multi-resid-fra.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/multi-delta-fra.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+<div>
+    <em>zho</em>
+    <iframe src="./plots/multi-resid-zho.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/multi-delta-zho.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+<div>
+    <em>kor</em>
+    <iframe src="./plots/multi-resid-kor.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <iframe src="./plots/multi-delta-kor.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+      
+      </details>
+      
+
+  </details>
+</div>
+
+<div class="bgimg-3" style="min-height: 35%;"></div>
+
+</body>
+</html>
