@@ -175,7 +175,7 @@ h3 {
   <details>
     <summary><b>Descriptions</b></summary>
     <details>
-      <summary><b>Convergence-Entropy</b></summary>
+      <summary>&nbsp;&nbsp;<b>Convergence-Entropy</b></summary>
       <p>Convergence-Entropy (CE: <a href="https://link.springer.com/article/10.3758/s13428-023-02267-2" target="_blank">Rosen & Dale 2024</a>) is a measurement of how much the information in one utterance $x$ could be recovered from the content in a separate utterance $y$. It uses a large language model to generate representations of each token and it's contextual meaning and iterates over those representations to calculate the Shannon entropy for each token in some utterance $x$.</p>
       <p>
         $\begin{aligned} E_{xi} &= LLM(i \in x) \\ P(E_{xi}|E_y) &= P_{N} \left( \min_j (E_{xi}, E_{yj}) | \mu=0, \sigma \right) \\ H[x|y] &= -\sum_i P(E_{xi}|E_y) \log P(E_{xi}|E_y) \end{aligned}$
@@ -184,10 +184,15 @@ h3 {
     </details>
 
     <details>
-      <summary><b>Allan Variance</b></summary>
+      <summary>&nbsp;&nbsp;<b>Allan Variance</b></summary>
       <p>Allan Variance is a measurement of variation over time in a signal or statistical distribution (<a href="http://ieeexplore.ieee.org/document/7406774/" target="_blank">Allan & Levine 2016</a>; <a href="https://ieeexplore.ieee.org/document/1537453" target="_blank">Snyder 1981</a>) and is measured as the total difference in a measurement for a time-series, minus it's future value and the how much that future value varies from the subsequent measurement. Formulaically, it is calculated as follows:</p>
       <p>$AVAR = \frac{1}{2\tau^2} \Big\langle \left( {t+2n} - 2{t+n} - t  \right)^2 \Big\rangle$</p>
       <p>Notably, the log-log transformed Allan Variance and temporal measurement for a given signal can be used to calculate exponential growth in a signal, $\alpha$ (<a href="https://doi.apa.org/doi/10.1037/xge0000021" target="_blank">Abney et al 2014</a>) -- which is used to characterize shifts in shared semantic and conceptual structures during conversation in the rest of this report.</p>
+    </details>
+
+    <details>
+      <summary>&nbsp;&nbsp;<b>Corpora</b></summary>
+      <p>Several corpora were used in the course of this study--their abbreviations/acronyms are available in the various sections of this visual report.</p>
     </details>
   
   </details>
