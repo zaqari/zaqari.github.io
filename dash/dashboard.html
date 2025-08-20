@@ -208,9 +208,9 @@ h3 {
       <p>Concepts shared between utterances have a durative, though temporally limited effect. What concepts are expressed by any one speaker appear to more strongly influence/are easier to recover from  the same speaker's subsequent utterances, though utterances clearly influence the concepts expressed by both the "self" and "others" during interaction. The change in Entropy (see the top figure below, and the upper figure for each individual corpus) is exponential. Notably, as time progresses the difference in how much an utterance $x$ influences a speaker's own contributions to conversation and their partners' shrinks exponentially as well (see the lower figure below).</p>
       <p>Exponential growth parameters for $\alpha$ are as follows</p>
       <ul>
-        <li>self: ($M=-.199, SE=.001, t(519389)=-144.27, p < 1e^{-9}$)</li>
-        <li>other: ($M=-.141, SE=.001, t(509862)=-79.32, p< 1e^{-9}$)</li>
-        <li>other-self: ($M=-.178, SE=.002, t(496276)=-114.87, p< 1e^{-9}$)</li>
+        <li>self: ($\alpha=-.199, SE=.001, t(519389)=-144.27, p < 1e^{-9}$)</li>
+        <li>other: ($\alpha=-.141, SE=.001, t(509862)=-79.32, p< 1e^{-9}$)</li>
+        <li>other-self: ($\alpha=-.178, SE=.002, t(496276)=-114.87, p< 1e^{-9}$)</li>
       </ul>
       <iframe src="./plots/eng-main-resid.html" style="width: 100%; height: 500px; left:4.5%; top:5%" frameBorder="0"></iframe>
       <iframe src="./plots/eng-main-delta.html" style="width: 100%; height: 500px; left:4.5%; top:5%" frameBorder="0"></iframe>
@@ -220,9 +220,11 @@ h3 {
       
       
 <div>
-    <em>SCoSE</em>
+    <em style="font-size:1.5em;">SCoSE</em>
     <iframe src="./plots/eng-resid-SCoSE.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/eng-delta-SCoSE.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
@@ -231,9 +233,11 @@ h3 {
 
 
 <div>
-    <em>DISPEL</em>
+    <em style="font-size:1.5em;">DISPEL</em>
     <iframe src="./plots/eng-resid-DISPEL.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/eng-delta-DISPEL.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
@@ -242,9 +246,11 @@ h3 {
 
 
 <div>
-    <em>CORAAL</em>
+    <em style="font-size:1.5em;">CORAAL</em>
     <iframe src="./plots/eng-resid-CORAAL.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/eng-delta-CORAAL.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
@@ -253,9 +259,11 @@ h3 {
 
 
 <div>
-    <em>Graesser</em>
+    <em style="font-size:1.5em;">Graesser</em>
     <iframe src="./plots/eng-resid-Graesser.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/eng-delta-Graesser.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
@@ -264,9 +272,11 @@ h3 {
 
 
 <div>
-    <em>CANDOR</em>
+    <em style="font-size:1.5em;">CANDOR</em>
     <iframe src="./plots/eng-resid-CANDOR.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/eng-delta-CANDOR.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
@@ -275,9 +285,11 @@ h3 {
 
 
 <div>
-    <em>med_school</em>
+    <em style="font-size:1.5em;">med_school</em>
     <iframe src="./plots/eng-resid-med_school.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/eng-delta-med_school.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
@@ -286,9 +298,11 @@ h3 {
 
 
 <div>
-    <em>callfriend</em>
+    <em style="font-size:1.5em;">callfriend</em>
     <iframe src="./plots/eng-resid-callfriend.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/eng-delta-callfriend.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
@@ -297,9 +311,11 @@ h3 {
 
 
 <div>
-    <em>GCSAusE</em>
+    <em style="font-size:1.5em;">GCSAusE</em>
     <iframe src="./plots/eng-resid-GCSAusE.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/eng-delta-GCSAusE.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
@@ -308,9 +324,11 @@ h3 {
 
 
 <div>
-    <em>MICASE</em>
+    <em style="font-size:1.5em;">MICASE</em>
     <iframe src="./plots/eng-resid-MICASE.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/eng-delta-MICASE.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
@@ -319,9 +337,11 @@ h3 {
 
 
 <div>
-    <em>Miao-fNIRS</em>
+    <em style="font-size:1.5em;">Miao-fNIRS</em>
     <iframe src="./plots/eng-resid-Miao-fNIRS.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/eng-delta-Miao-fNIRS.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
@@ -330,9 +350,11 @@ h3 {
 
 
 <div>
-    <em>Frederiksen</em>
+    <em style="font-size:1.5em;">Frederiksen</em>
     <iframe src="./plots/eng-resid-Frederiksen.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/eng-delta-Frederiksen.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
@@ -341,9 +363,11 @@ h3 {
 
 
 <div>
-    <em>callhome</em>
+    <em style="font-size:1.5em;">callhome</em>
     <iframe src="./plots/eng-resid-callhome.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/eng-delta-callhome.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
@@ -352,9 +376,11 @@ h3 {
 
 
 <div>
-    <em>SBCSAE</em>
+    <em style="font-size:1.5em;">SBCSAE</em>
     <iframe src="./plots/eng-resid-SBCSAE.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/eng-delta-SBCSAE.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
@@ -363,9 +389,11 @@ h3 {
 
 
 <div>
-    <em>CABNC</em>
+    <em style="font-size:1.5em;">CABNC</em>
     <iframe src="./plots/eng-resid-CABNC.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/eng-delta-CABNC.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
@@ -658,9 +686,9 @@ h3 {
     <p>Analyses of 8 additional languages, plus a subset of the English conversation data, replicates the same temporal and interpersonal characteristics of the English monolingual study.</p>
     <p>Exponential growth parameters for $\alpha$ are as follows</p>
     <ul>
-      <li>self: ($M=-.111, SE=.001, t(347984)=-74.79, p< 1e^{-9}$)</li>
-      <li>other: ($M=-.060, SE=.002, t(285890)=-34.45, p< 1e^{-9}$)</li>
-      <li>other-self: ($M=-.103, SE=.00189, t(2833643)=-54.67, p<`e^{-9}$)</li>
+      <li>self: ($\alpha=-.111, SE=.001, t(347984)=-74.79, p< 1e^{-9}$)</li>
+      <li>other: ($\alpha=-.060, SE=.002, t(285890)=-34.45, p< 1e^{-9}$)</li>
+      <li>other-self: ($\alpha=-.103, SE=.00189, t(2833643)=-54.67, p<`e^{-9}$)</li>
     </ul>
     <iframe src="./plots/multi-main-resid.html" style="width: 100%; height: 500px; left:4.5%; top:5%" frameBorder="0"></iframe>
       <iframe src="./plots/multi-main-delta.html" style="width: 100%; height: 500px; left:4.5%; top:5%" frameBorder="0"></iframe>
@@ -668,72 +696,66 @@ h3 {
       <details>
         <summary><b>Individual Languages</b></summary>
         
-        
-<div>
-    <em>deu</em>
+        <div>
+    <em style="font-size:1.5em;">deu</em>
     <iframe src="./plots/multi-resid-deu.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/multi-delta-deu.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
 </div>
-
-
-
 <div>
-    <em>spa</em>
+    <em style="font-size:1.5em;">spa</em>
     <iframe src="./plots/multi-resid-spa.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/multi-delta-spa.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
 </div>
-
-
-
 <div>
-    <em>eng</em>
+    <em style="font-size:1.5em;">eng</em>
     <iframe src="./plots/multi-resid-eng.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/multi-delta-eng.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
 </div>
-
-
-
 <div>
-    <em>fra</em>
+    <em style="font-size:1.5em;">fra</em>
     <iframe src="./plots/multi-resid-fra.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/multi-delta-fra.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
 </div>
-
-
-
 <div>
-    <em>zho</em>
+    <em style="font-size:1.5em;">zho</em>
     <iframe src="./plots/multi-resid-zho.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/multi-delta-zho.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
 </div>
-
-
-
 <div>
-    <em>kor</em>
+    <em style="font-size:1.5em;">kor</em>
     <iframe src="./plots/multi-resid-kor.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(a) Change in CE for "self" (orange) and "other" (blue) separately by turn (turn $\Delta$)</p>
     <iframe src="./plots/multi-delta-kor.html" style="width: 100%; height: 250px;" frameBorder="0"></iframe>
+    <p>&nbsp;&nbsp;(b) Change in difference in CE values between "self" versus "other" measurements by turn (turn $\Delta$)</p>
     <br>
     <br>
     <hr>
 </div>
-
-
       
       </details>
       
