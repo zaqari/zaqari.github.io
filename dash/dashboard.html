@@ -413,9 +413,18 @@ h3 {
   <h3 class="grey-H3">CANDOR Exploratory Study</h3>
   <details>
     <summary><b>Summary and report</b></summary>
+    <p></p>
     <p>Results across 1656 of the conversations in the CANDOR dataset indicate that how one converges may differentially affect either prosocial affinity or the perception of establishing shared context.</p>
     <p>Often times people have competing wants and needs for how they contribute to conversation versus how their partner interacts with them, as demonstrated in our results.</p>
-    <div>
+    <p>We used a custom Bayesian Regression model implemented in JAGs. The formula is provided below. Let $s_i$ be the calculated exponential slope for changes in CE as a function of temporal distance between utterances. Leg $\beta_c$ be the intercept for either ``self'' or ``other''. Let $\psi_i$ be an equation yielding either $\phi$ (the regression coefficient multiplied times some variable $v_i$ for the self condition) or $\beta$ (the regression coefficient multiplied times some variable $v_i$ for the other condition). Let variance be a function of conversation and whether the speaker for the utterance $y$ was either the self or other. Let $\delta_c$ be a dirac-delta function that returns 0 or 1 if $c$ is true.</p>
+    <p>$$\begin{align}s_i &\sim \mathcal{N} \bigg(\beta_{c} + \psi_i\ v_i, \ \sigma^2_{p} \bigg) \\ \psi_i &= \beta \ \delta_{i\neq self} + \phi\ \delta_{i=self} \\ \beta_c &= \beta_{0,self} \ \delta_{i=self} + \beta_{0, i \neq self} \ \delta_{i \neq self} \\ \delta_c &= \begin{cases} 1 & \text{iff}\ \ c \\ 0 & \text{elsewhere} \end{cases} \end{align}$$</p>
+    <p>Below are visualizations of the parameter estimates per each model.</p>
+    <embed src="./plots/affective-motives.html" style="width: 100%; height: 300px; border: none;" frameBorder="0"/>
+    (a) Affective motives (conversational objectives related to social goals and interpersonal affinity)
+    <embed src="./plots/cognitive-motives.html" style="width: 100%; height: 300px; border: none;" frameBorder="0"/>
+    (b) Cognitive motives (conversational objectives related to facilitating shared understanding)
+    <p>Parameter estimates, statistics, and significance values are provided in the table below.</p>
+     <div>
       <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQtYv7NiVLAFb2Y6l6DQeYHo47nhs1rsXYxjwTze6IXRBiZeTrNwtsshbc6_vIBDQfph1QTWenOsj7T/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false&amp;chrome=false" style="width: 600px; height: 450px; display: block;" frameBorder="0 allowfullscreen"></iframe>
     </div>
     
