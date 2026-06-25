@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+a:link {
+  color: rgb(201, 178, 5);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(70, 5, 201);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("https://www.intotheminds.com/blog/app/uploads/desk-research-group-tn.jpg");
+  min-height: 20%;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="bgimg-1" style="min-height: 10%;"></div>
+
+<div style="position:relative;">
+  <div style="color:#282E34;background-color:white;text-align:left;padding:50px 80px;">
+    <h3 style="text-align:left;color:rgb(164, 162, 6);">PopSci Reports and Dashboards</h3>
+<!--    <embed src="https://docs.google.com/document/d/e/2PACX-1vTfJGNV4rHIQBqDzB0mAAE79KjbsuMHeMB9-LYXWtngY2OIuhauKdg8MxBr2KHMb0rjTJQL6rGwkeMd", style="width: 100%; height: 400px;"/>-->
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vTfJGNV4rHIQBqDzB0mAAE79KjbsuMHeMB9-LYXWtngY2OIuhauKdg8MxBr2KHMb0rjTJQL6rGwkeMd/pub?embedded=true" width="100%" height="100px" frameBorder="0"></iframe>
+  </div>
+</div>
+
+<div class="bgimg-1" style="min-height: 5%;"></div>
+
+<div style="position:relative;">
+  <div style="color:#282E34;background-color:white;text-align:left;padding:50px 80px;">
+   <h3 style="text-align:left;color:rgb(164, 162, 6);">"Cogit Me This" Blog Posts</h3>
+    <iframe src="https://cogitmethis.wordpress.com/" width="100%" height="400px" frameBorder="0"></iframe>
+  </div>
+</div>
+
+<div class="bgimg-1" style="min-height: 10%;"></div>
+<!-- <div class="bgimg-1" style="min-height: 30%;"></div> -->
+
+</body>
+</html>
