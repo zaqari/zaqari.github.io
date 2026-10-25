@@ -187,7 +187,7 @@ h3 {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 30vw;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 111;
 }
@@ -325,16 +325,30 @@ h3 {
 <!--          <a href="https://cogitmethis.wordpress.com/" id="blogbtn" target="_blank">Blog</a> -->
         </div>
     </div>
-    <a href="#" data-tag="bio" data-url="./BlogPosts.html" id="blogbtn">Blog</a>
+    <!-- content set 1-->
     <div class="dropdown">
       <button class="dropbtn">
-          Tutorials & Readers
+          Blogs & Dashboards
+      </button>
+      <div class="dropdown-content">
+        <div class="dropdown">
+          <div class="dropdown-content">
+            <a href="#" data-tag="bio" data-url="./BlogPosts.html" id="blogbtn">Blogs & Dashboards <b>(all)</b></a>
+            <a href="https://zaqari.github.io/complexity_science_of_everyday_conversations/web/report.html" target="_blank">Conversation and distributed cognition <b>(featured)</b></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- old drop down -->
+    <div class="dropdown">
+      <button class="dropbtn">
+          Tutorials, & Readers
       </button>
       <div class="dropdown-content">
         <a href="#" data-tag="llm-hist" data-url="./llm-history.html" id="historylssn">A historical LLM reader</a>
         <!-- <a href="#" data-tag="ce-lp" data-url="https://colab.research.google.com/drive/1UGZJahDAe5EA9evWmR-Gfpo8DcnvZDNj?usp=sharing" id="celp">A lesson on convergence-entropy/information</a> -->
         <a href="https://colab.research.google.com/drive/1UGZJahDAe5EA9evWmR-Gfpo8DcnvZDNj?usp=sharing" target="_blank">Convergence-entropy/information LP</a>
-        <a href="https://zaqari.github.io/complexity_science_of_everyday_conversations/web/report.html" target="_blank">Conversation and distributed cognition</a>
         <!-- <a href="#" data-tag="dist-cog" data-url="https://zaqari.github.io/complexity_science_of_everyday_conversations/web/report.html" id="distcog">Conversation -> Distributed Cognition</a> -->
       </div>
     </div>
