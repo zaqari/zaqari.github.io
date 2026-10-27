@@ -312,20 +312,24 @@ h3 {
     <a href="#" data-tag="bio" data-url="./aboutme.html" id="biobtn">Bio</a> 
     <a href="#" data-tag="initiatives" data-url="./intiatives.html" id="initiativesbtn">My Research</a> 
     <!-- <a href="#" data-tag="services" data-url="./services.html" id="servicesbtn">Services Offered</a>   -->
-      <div class="dropdown">
-        <button class="dropbtn">
-            Vitae 
-        </button>
-        <div class="dropdown-content">
-          <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=oiNd_rIAAAAJ" target="_blank" style="color: #022f5c;">Google Scholar</a>
-          <a href="https://www.researchgate.net/profile/Zachary-Rosen-2" target="_blank" style="color: #022f5c;">ResearchGate Profile</a>
-          <a href="https://drive.google.com/file/d/1iXj6MgSvGxPOJSGmxMOXJULoYFVU5O3m/view?usp=drive_link" target="_blank" style="color: #022f5c;">Resume</a>
-          <a href="https://drive.google.com/file/d/1q_mq-xOVWtKXjrffo-WJiw5MbWyiXXP2/view?usp=sharing" target="_blank" style="color: #022f5c;">Curriculum Vitae</a>
-          <a href="https://github.com/zaqari" target="_blank">Code/Portfolio</a>
-<!--          <a href="https://cogitmethis.wordpress.com/" id="blogbtn" target="_blank">Blog</a> -->
-        </div>
+    
+    <!-- Vitae and professional materials -->
+    <div class="dropdown">
+      <button class="dropbtn">
+          Vitae 
+      </button>
+      <div class="dropdown-content">
+        <a href="#" data-tag="vitae" id="vitaebtn" data-url="https://drive.google.com/file/d/1q_mq-xOVWtKXjrffo-WJiw5MbWyiXXP2/preview" style="color: #022f5c;">Curriculum Vitae</a>
+        <a href="#" data-tag="resume" id="resumebtn" data-url="https://drive.google.com/file/d/1iXj6MgSvGxPOJSGmxMOXJULoYFVU5O3m/preview" style="color: #022f5c;">Targeted Resume</a>
+        <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=oiNd_rIAAAAJ" target="_blank" style="color: #022f5c;">Google Scholar</a>
+        <a href="https://www.researchgate.net/profile/Zachary-Rosen-2" target="_blank" style="color: #022f5c;">ResearchGate Profile</a>
+        <!-- <a href="https://drive.google.com/file/d/1iXj6MgSvGxPOJSGmxMOXJULoYFVU5O3m/view?usp=drive_link" target="_blank" style="color: #022f5c;">Resume</a> -->
+        <!-- <a href="https://drive.google.com/file/d/1q_mq-xOVWtKXjrffo-WJiw5MbWyiXXP2/view?usp=sharing" target="_blank" style="color: #022f5c;">Curriculum Vitae</a> -->
+        <a href="https://github.com/zaqari" target="_blank">Github Code/Portfolio</a>
+      </div>
     </div>
-    <!-- content set 1-->
+    
+    <!-- Blogs and dashboards -->
     <div class="dropdown">
       <button class="dropbtn">
           Blogs & Dashboards
@@ -340,18 +344,17 @@ h3 {
       </div>
     </div>
     
-    <!-- old drop down -->
+    <!-- Tutorials, LPs, and seminar reading lists -->
     <div class="dropdown">
       <button class="dropbtn">
           Tutorials
       </button>
       <div class="dropdown-content">
         <a href="#" data-tag="llm-hist" data-url="./llm-history.html" id="historylssn">A historical LLM reader</a>
-        <!-- <a href="#" data-tag="ce-lp" data-url="https://colab.research.google.com/drive/1UGZJahDAe5EA9evWmR-Gfpo8DcnvZDNj?usp=sharing" id="celp">A lesson on convergence-entropy/information</a> -->
         <a href="https://colab.research.google.com/drive/1UGZJahDAe5EA9evWmR-Gfpo8DcnvZDNj?usp=sharing" target="_blank">Convergence-entropy/information</a>
-        <!-- <a href="#" data-tag="dist-cog" data-url="https://zaqari.github.io/complexity_science_of_everyday_conversations/web/report.html" id="distcog">Conversation -> Distributed Cognition</a> -->
       </div>
     </div>
+    
     <!-- Handling what to do with topnav for different screen sizes -->
       <a href="javascript:void(0);" class="icon" onclick="navmini()">&#9776;</a>
   </div>
@@ -372,16 +375,11 @@ h3 {
     <div class="textboximg-1">
       <iframe id="modalContentFrame" src="" style="width: 79%; height: 90%; position: absolute; left:4.5%; top:5%" frameBorder="0"></iframe>
     </div>
-    <!-- <iframe src="./intiatives.html" style="width: 100%; height: 100%;" frameBorder="0"></iframe> -->
   </div>
 </div>
 
 
 </body>
-
-<script>
-  
-</script>
 
 <script>
   window.onscroll = function() {myFunction()};
@@ -435,7 +433,5 @@ h3 {
     }
   );
 </script>
-
-
 
 </html>
