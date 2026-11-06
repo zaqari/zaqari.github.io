@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian Style Callouts</title>
+    <style>
+        /* Base Obsidian-like Dark Theme Context */
+        body, html {
+          height: 100%;
+          margin: 0;
+          font: 400 15px/1.8 "Lato", sans-serif;
+          color: #777;
+          background-color: #f6f0fc;
+        }
+
+        a:link {
+          color: rgb(149, 161, 198);
+          background-color: transparent;
+          text-decoration: none;
+        }
+
+        a:visited {
+          color: rgb(70, 5, 201);
+          background-color: transparent;
+          text-decoration: none;
+        }
+
+        .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+          position: relative;
+          opacity: 0.65;
+          background-attachment: fixed;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+
+        }
+        .bgimg-1 {
+          background-image: url("https://www.intotheminds.com/blog/app/uploads/desk-research-group-tn.jpg");
+          min-height: 20%;
+        }
+
+        .caption {
+          /* position: absolute; */
+          left: 0;
+          top: 0%;
+          width: 100%;
+          text-align: left;
+          color: #000;
+        }
+
+        .caption span.border {
+          background-color: #111;
+          color: #fff;
+          padding: 20px;
+          font-size: clamp(1vw, 2.5vw, 5vw);
+          letter-spacing: 2px;
+          /* margin: 10px; */
+        }
+
+        h3 {
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          font: 20px "Lato", sans-serif;
+          color: #111;
+        }
+
+        /* Turn off parallax scrolling for tablets and phones */
+        @media only screen and (max-device-width: 1024px) {
+          .bgimg-1, .bgimg-2, .bgimg-3 {
+            background-attachment: scroll;
+          }
+        }
+
+        /* --- OBSIDIAN CALLOUT COMPONENT --- */
+        .callout {
+            /* Fallback theme variables */
+            --callout-color: 8, 109, 221; /* Info Blue (RGB) */
+            --callout-bg-opacity: 0.1;
+            --callout-border-opacity: 0.3;
+
+            background-color: rgba(var(--callout-color), var(--callout-bg-opacity));
+            border-left: 4px solid rgba(var(--callout-color), 1);
+            border-radius: 4px;
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Callout Header/Title block */
+        .callout-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: rgba(var(--callout-color), 1);
+            margin-bottom: 0.5rem;
+        }
+
+        /* SVG Icon styling */
+        .callout-icon {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+            flex-shrink: 0;
+        }
+
+        /* Callout Inner Content */
+        .callout-content {
+            color: #dcddde;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .callout-content p:first-child {
+            margin-top: 0;
+        }
+
+        .callout-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- CALLOUT VARIANTS (Modifying the --callout-color variable) --- */
+
+        /* Info (Default Override) */
+        .callout[data-callout="info"] {
+            --callout-color: 0, 122, 255;
+        }
+
+        /* Tip / Hint / Success */
+        .callout[data-callout="tip"] {
+            --callout-color: 16, 185, 129;
+        }
+
+        /* Warning / Caution */
+        .callout[data-callout="warning"] {
+            --callout-color: 245, 158, 11;
+        }
+
+        /* Danger / Error */
+        .callout[data-callout="danger"] {
+            --callout-color: 239, 68, 68;
+        }
+    </style>
+</head>
+<body>
+
+<div style="position: relative; padding: 50px 10px; background-color: white;">
+  <div class="caption">
+    <span class="border">Student learning objectives</span>
+  </div>
+  <br>
+    <details>
+        <summary>Course Overview</summary>
+        <p>Since the release of ChatGPT in 2022, public interest in the field of "Artificial intelligence" has steadily increased over time. A number of companies -- including OpenAI, Anthropic, Google, Meta, and others -- have capitalized on this interest to procure additional sources of funding and public support. </p>
+    <p>In a number of cases, these public initiatives (and marketing campaigns) by major, "frontier" AI "labs" have been couched in hyperbolic language. The current reading list is designed as an information innoculation against some of the claims made by these companies.</p>
+    <p>The reading level for this list is approximately appropriate for either a young graduate student, or else an advanced undergraduate student with background in some statistical methods (specifically regression based methods, of which deeplearning is a subset), and some knowledge of social science concepts.</p>
+    </details>
+
+  <details>
+  <summary>Details</summary>
+      <ul>
+        <li>Students will be able to identify critical arguments against AI related "hype"</li>
+<li>Students will be able to articulate the limitations on known criticisms of AI algorithms</li>
+      </ul>
+  </details>
+</div>
+
+
+<div style="background-color: #5e6164; color: white; padding: 50px 10px;">
+  <div class="caption">
+    <span class="border">Required Materials List</span>
+  </div>
+  <br>
+  <details>
+  <summary>Details</summary>
+      <ul>
+        <li>N/A</li>
+      </ul>
+  </details>
+</div>
+
+
+<div style="background-color: #282E34; position: relative; padding: 50px 10px; color: white">
+  <div class="caption">
+    <span class="border">Seminar Reading List</span>
+  </div>
+  <br>
+  <details>
+  <summary>Details</summary>
+      
+<!-- section: "AI" is not, in and of itself, encompassing or informative of cognitive science. If such systems can be thought of as model systems for cognition, their scope is limited. -->
+<div class="callout" data-callout="info">
+    <div class="callout-title">
+        <svg class="callout-icon" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>
+            "AI" is not, in and of itself, encompassing or informative of cognitive science. If such systems can be thought of as model systems for cognition, their scope is limited.
+        </span>
+    </div>
+    <div class="callout-content">
+        Guest, O., Suarez, M., Müller, B., Meerkerk, E. van, Beverborg, A. O. G., Haan, R. de, Elizondo, A. R., Blokpoel, M., Scharfenberg, N., Kleinherenbrink, A., Camerino, I., Woensdregt, M., Monett, D., Brown, J., Avraamidou, L., Alenda-Demoutiez, J., Hermans, F., & Rooij, I. van. (2026). Against the Uncritical Adoption of “Ai” Technologies in Academia. Digital Culture and Education, 16(2). <a href="https://zenodo.org/records/20082828" target="blank">https://zenodo.org/records/20082828</a>
+<br><br>van Rooij, I., Guest, O., Adolfi, F., de Haan, R., Kolokolova, A., & Rich, P. (2024). Reclaiming AI as a Theoretical Tool for Cognitive Science. Computational Brain & Behavior, 7(4), 616–636. <a href="https://doi.org/10.1007/s42113-024-00217-5" target="blank">https://doi.org/10.1007/s42113-024-00217-5</a>
+    </div>
+</div>
+
+
+<br>
+<!-- section: AI use decreases your ability to critically think -->
+<div class="callout" data-callout="info">
+    <div class="callout-title">
+        <svg class="callout-icon" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>
+            Growing evidence shows that AI use (cognitive offloading) decreases your ability to critically think
+        </span>
+    </div>
+    <div class="callout-content">
+        Kosmyna, N., Hauptmann, E., Yuan, Y. T., Situ, J., Liao, X.-H., Beresnitzky, A. V., Braunstein, I., & Maes, P. (2025). Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task (arXiv:2506.08872). arXiv. <a href="https://doi.org/10.48550/arXiv.2506.08872" target="blank">https://doi.org/10.48550/arXiv.2506.08872</a>
+<br><br>Liu, G., Christian, B., Dumbalska, T., Bakker, M. A., & Dubey, R. (2026). AI Assistance Reduces Persistence and Hurts Independent Performance (arXiv:2604.04721). arXiv. <a href="https://doi.org/10.48550/arXiv.2604.04721" target="blank">https://doi.org/10.48550/arXiv.2604.04721</a>
+<br><br>Zebrowski, R. L. (2025). How Not to Collaborate With Large Language Models: The Current Impossibility of Social Cognition With AI Systems. In H. Shevlin & P. Hacker (Eds.), Oxford Intersections: AI in Society (p. 0). Oxford University Press. <a href="https://doi.org/10.1093/9780198945215.003.0071" target="blank">https://doi.org/10.1093/9780198945215.003.0071</a>
+<br><br>Lee, H.-P. (Hank), Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., & Wilson, N. (2025). The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers. Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems, CHI ’25, 1–22. <a href="https://doi.org/10.1145/3706598.3713778" target="blank">https://doi.org/10.1145/3706598.3713778</a>
+<br><br>Solé, R., Ruffini, G., Castaldo, F., Tuccio, M., Seoane, L. F., Domenico, M. de, Elena, S. F., Krakauer, D. C., & Levin, M. (2026). Large-Language Models as a Cognitive Virus (arXiv:2609.03344; Version 1). arXiv. <a href="https://doi.org/10.48550/arXiv.2609.03344" target="blank">https://doi.org/10.48550/arXiv.2609.03344</a>
+    </div>
+</div>
+
+
+<br>
+<!-- section: People who don't understand AI (techno-idiots) are more likely to adopt/use AI -->
+<div class="callout" data-callout="info">
+    <div class="callout-title">
+        <svg class="callout-icon" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>
+            People who don't understand (and thus lack foundational knowledge for critical evaluation of) AI are more likely to adopt/use it.
+        </span>
+    </div>
+    <div class="callout-content">
+        Tully, S., Longoni, C., & Appel, G. (2025). Lower Artificial Intelligence Literacy Predicts Greater AI Receptivity. Journal of Marketing, 00222429251314491. <a href="https://doi.org/10.1177/00222429251314491" target="blank">https://doi.org/10.1177/00222429251314491</a>
+    </div>
+</div>
+
+
+<br>
+<!-- section: and it's not just me who judges you for using AI. Everyone judges you. You should feel bad. -->
+<div class="callout" data-callout="info">
+    <div class="callout-title">
+        <svg class="callout-icon" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>
+            Using AI incurs high social penalties/reputational costs for individuals (so... maybe don't brag about using it rather than using your brain for critical thinking)
+        </span>
+    </div>
+    <div class="callout-content">
+        Reif, J. A., Larrick, R. P., & Soll, J. B. (2025). Evidence of a social evaluation penalty for using AI. Proceedings of the National Academy of Sciences, 122(19), e2426766122. <a href="https://doi.org/10.1073/pnas.2426766122" target="blank">https://doi.org/10.1073/pnas.2426766122</a>
+    </div>
+</div>
+
+
+<br>
+<!-- section: the quality of AI texts/work is something to be desired -->
+<div class="callout" data-callout="info">
+    <div class="callout-title">
+        <svg class="callout-icon" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>
+            The quality of AI texts/work is variable (and not completely reliable)
+        </span>
+    </div>
+    <div class="callout-content">
+        Xu, F. F., Song, Y., Li, B., Tang, Y., Jain, K., Bao, M., Wang, Z. Z., Zhou, X., Guo, Z., Cao, M., Yang, M., Lu, H. Y., Martin, A., Su, Z., Maben, L., Mehta, R., Chi, W., Jang, L., Xie, Y., … Neubig, G. (2025). TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks (arXiv:2412.14161). arXiv. <a href="https://doi.org/10.48550/arXiv.2412.14161" target="blank">https://doi.org/10.48550/arXiv.2412.14161</a>
+<br><br>Mazeika, M., Gatti, A., Menghini, C., Sehwag, U. M., Singhal, S., Orlovskiy, Y., Basart, S., Sharma, M., Peskoff, D., Lau, E., Lim, J., Carroll, L., Blair, A., Sivakumar, V., Basu, S., Kenstler, B., Ma, Y., Michael, J., Li, X., … Hendrycks, D. (2025). Remote Labor Index: Measuring AI Automation of Remote Work (arXiv:2510.26787). arXiv. <a href="https://doi.org/10.48550/arXiv.2510.26787" target="blank">https://doi.org/10.48550/arXiv.2510.26787</a>
+    </div>
+</div>
+
+
+<br>
+<!-- section: Partially because hallucinations are a feature not a bug -->
+<div class="callout" data-callout="info">
+    <div class="callout-title">
+        <svg class="callout-icon" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>
+            Hallucinations are a feature not a bug
+        </span>
+    </div>
+    <div class="callout-content">
+        Yao, J.-Y., Ning, K.-P., Liu, Z.-H., Ning, M.-N., & Yuan, L. (2023). LLM Lies: Hallucinations are not Bugs, but Features as Adversarial Examples (arXiv:2310.01469). arXiv. <a href="http://arxiv.org/abs/2310.01469" target="blank">http://arxiv.org/abs/2310.01469</a>
+<br><br>Kalai, A. T., Nachum, O., Vempala, S. S., & Zhang, E. (2025). Why Language Models Hallucinate (arXiv:2509.04664). arXiv. <a href="https://doi.org/10.48550/arXiv.2509.04664" target="blank">https://doi.org/10.48550/arXiv.2509.04664</a>
+<br><br>Xu, Z., Jain, S., & Kankanhalli, M. (2024). Hallucination is Inevitable: An Innate Limitation of Large Language Models (arXiv:2401.11817). arXiv. <a href="http://arxiv.org/abs/2401.11817" target="blank">http://arxiv.org/abs/2401.11817</a>
+    </div>
+</div>
+
+
+<br>
+<!-- section: And because they all sound the same. -->
+<div class="callout" data-callout="info">
+    <div class="callout-title">
+        <svg class="callout-icon" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>
+            Ultimately, all models end up "sounding" the same (because of mass similarities in their training data)
+        </span>
+    </div>
+    <div class="callout-content">
+        Jiang, L., Chai, Y., Li, M., Liu, M., Fok, R., Dziri, N., Tsvetkov, Y., Sap, M., Albalak, A., & Choi, Y. (2025). Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond) (arXiv:2510.22954). arXiv. <a href="https://doi.org/10.48550/arXiv.2510.22954" target="blank">https://doi.org/10.48550/arXiv.2510.22954</a>
+<br><br>Russell, J., Rajendhran, R., Pham, C. M., Iyyer, M., & Wieting, J. (2026). StoryScope: Investigating idiosyncrasies in AI fiction (arXiv:2604.03136). arXiv. <a href="https://doi.org/10.48550/arXiv.2604.03136" target="blank">https://doi.org/10.48550/arXiv.2604.03136</a>
+    </div>
+</div>
+
+
+<br>
+<!-- section: AI model sycophancy is a fucking problem -->
+<div class="callout" data-callout="info">
+    <div class="callout-title">
+        <svg class="callout-icon" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>
+            AI model sycophancy is a major f'ing problem
+        </span>
+    </div>
+    <div class="callout-content">
+        Malmqvist, L. (2024). Sycophancy in Large Language Models: Causes and Mitigations (arXiv:2411.15287; Version 1). arXiv. <a href="https://doi.org/10.48550/arXiv.2411.15287" target="blank">https://doi.org/10.48550/arXiv.2411.15287</a>
+<br><br>Ranaldi, L., & Pucci, G. (2025). When Large Language Models contradict humans? Large Language Models’ Sycophantic Behaviour (arXiv:2311.09410). arXiv. <a href="https://doi.org/10.48550/arXiv.2311.09410" target="blank">https://doi.org/10.48550/arXiv.2311.09410</a>
+<br><br>Fanous, A., Goldberg, J., Agarwal, A., Lin, J., Zhou, A., Xu, S., Bikia, V., Daneshjou, R., & Koyejo, S. (2025). SycEval: Evaluating LLM Sycophancy. Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, 8(1), 893–900. <a href="https://doi.org/10.1609/aies.v8i1.36598" target="blank">https://doi.org/10.1609/aies.v8i1.36598</a>
+    </div>
+</div>
+
+
+<br>
+<!-- section: The way AI works just doesn't capture what people really do with language and interaction -->
+<div class="callout" data-callout="info">
+    <div class="callout-title">
+        <svg class="callout-icon" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>
+            The way AI works just doesn't capture what people really do with language and interaction
+        </span>
+    </div>
+    <div class="callout-content">
+        Rosen, Z. P., & Dale, R. (2024). LLMs Don’t “Do Things with Words” but Their Lack of Illocution Can Inform the Study of Human Discourse. Proceedings of the Annual Meeting of the Cognitive Science Society, 46. <a href="https://escholarship.org/uc/item/25k7z0mz" target="blank">https://escholarship.org/uc/item/25k7z0mz</a>
+<br><br>Birhane, A. (2021). The Impossibility of Automating Ambiguity. Artificial Life, 27(1), 44–61. <a href="https://doi.org/10.1162/artla00336" target="blank">https://doi.org/10.1162/artla00336</a> *(Note: this is about models in general compacting choices to a minimal set which is not naturalistically valid)*
+<br><br>Russell, J., Rajendhran, R., Pham, C. M., Iyyer, M., & Wieting, J. (2026). StoryScope: Investigating idiosyncrasies in AI fiction (arXiv:2604.03136). arXiv. <a href="https://doi.org/10.48550/arXiv.2604.03136" target="blank">https://doi.org/10.48550/arXiv.2604.03136</a>
+    </div>
+</div>
+
+
+<br>
+<!-- section: Chain of reasoning (unguided within models as it's implemented in openAI and Anthropic) yield strings that are "unfaithful"/hallucinated/are not actual reasons for why they generate the answers that they do. -->
+<div class="callout" data-callout="info">
+    <div class="callout-title">
+        <svg class="callout-icon" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>
+            Chain of reasoning (unguided within models as it's implemented in openAI and Anthropic) yield strings that are "unfaithful"/hallucinated/are not actual reasons for why they generate the answers that they do.
+        </span>
+    </div>
+    <div class="callout-content">
+        Pfau, J., Merrill, W., & Bowman, S. R. (2024). Let’s Think Dot by Dot: Hidden Computation in Transformer Language Models (Version 1). arXiv. <a href="https://doi.org/10.48550/ARXIV.2404.15758" target="blank">https://doi.org/10.48550/ARXIV.2404.15758</a>
+<br><br>Dingemanse, M. (2026). Interactional foundations for critical AI literacies. <a href="https://doi.org/10.5281/zenodo.21369385" target="blank">https://doi.org/10.5281/zenodo.21369385</a>
+<br><br>Arcuschin, I., Janiak, J., Krzyzanowski, R., Rajamanoharan, S., Nanda, N., & Conmy, A. (2026). Chain-of-Thought Reasoning In The Wild Is Not Always Faithful (arXiv:2503.08679). arXiv. <a href="https://doi.org/10.48550/arXiv.2503.08679" target="blank">https://doi.org/10.48550/arXiv.2503.08679</a>
+<br><br>Turpin, M., Michael, J., Perez, E., & Bowman, S. R. (2023). Language Models Don’t Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting (arXiv:2305.04388). arXiv. <a href="https://doi.org/10.48550/arXiv.2305.04388" target="blank">https://doi.org/10.48550/arXiv.2305.04388</a>
+<br><br>And this [good metaphor for what chain of thought is... i.e. just the read out of states in a Turing machine](https://bsky.app/profile/beenwrekt.bsky.social/post/3muctdpgj5s2a).
+    </div>
+</div>
+
+
+
+<br>
+<!-- section: FYI: BERT (really just cloze task trained models) is(are) better at semantic similarity tasks -->
+<div class="callout" data-callout="info">
+    <div class="callout-title">
+        <svg class="callout-icon" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>
+            FYI: BERT (really just cloze task trained models) is(are) better at semantic similarity tasks
+        </span>
+    </div>
+    <div class="callout-content">
+        Periti, F., Dubossarsky, H., & Tahmasebi, N. (2024). (Chat)GPT v BERT Dawn of Justice for Semantic Change Detection. In Y. Graham & M. Purver (Eds.), Findings of the Association for Computational Linguistics: EACL 2024 (pp. 420–436). Association for Computational Linguistics. <a href="https://doi.org/10.18653/v1/2024.findings-eacl.29" target="blank">https://doi.org/10.18653/v1/2024.findings-eacl.29</a>
+<br><br>Ethayarajh, K. (2019). How Contextual are Contextualized Word Representations? Comparing the Geometry of BERT, ELMo, and GPT-2 Embeddings. In K. Inui, J. Jiang, V. Ng, & X. Wan (Eds.), Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP) (pp. 55–65). Association for Computational Linguistics. <a href="https://doi.org/10.18653/v1/D19-1006" target="blank">https://doi.org/10.18653/v1/D19-1006</a>
+    </div>
+</div>
+
+
+  </details>
+</div>
+
+
+
+</body>
+</html>
